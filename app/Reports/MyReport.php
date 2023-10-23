@@ -31,8 +31,9 @@ class MyReport extends \koolreport\KoolReport
             Lead::join('campaigns','campaigns.id','=','leads.user_id')
             ->join('lead_quotes','lead_quotes.lead_id','=','leads.id')
             ->join('quotes','quotes.id','=','lead_quotes.quote_id')
-            ->take(10)
+            ->select('campaigns.number_of_accounts','campaigns.number_of_appointment_set','campaigns.budgeted_cost','campaigns.name','campaigns.number_of_contacts','campaigns.number_of_converted_leads','campaigns.end_date','campaigns.expected_response','campaigns.expected_revenue','campaigns.number_of_proposed_quotes','campaigns.number_of_responses','campaigns.start_date','campaigns.amount_all_quotes','campaigns.amount_won_quotes','campaigns.number_of_won_quotes')
+            ->take(5)
             )
-        ->pipe($this->dataStore("lead"));
+        ->pipe($this->dataStore("leads"));
     }
 }

@@ -9,7 +9,7 @@ use \koolreport\widgets\koolphp\Table;
         <h1>It works</h1>
         <?php
         Table::create([
-            "dataSource"=>$this->dataStore("offices")
+            "dataSource"=>$this->dataStore("leads")
         ]);
         ?>
     </body>
