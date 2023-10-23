@@ -18,16 +18,5 @@ class DataTablesController extends Controller
     {
         $report = new MyReport;
         return view("dataShow",["report"=>$report]);
-        // $report->run();
-        // $data= DB::table('leads')
-        // ->join('campaigns','campaigns.id','=','leads.user_id')
-        // ->join('lead_quotes','lead_quotes.lead_id','=','leads.id')
-        // ->join('quotes','quotes.id','=','lead_quotes.quote_id')
-        // ->where('leads.user_id','=','users.id')
-        // ->select(
-            // 'campaigns.id as person_leads_id',
-            // 'campaigns'
-            // )
-            // ->get();
     }
 }
